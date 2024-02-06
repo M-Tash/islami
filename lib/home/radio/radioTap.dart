@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioTap extends StatelessWidget {
 
@@ -9,21 +10,41 @@ class RadioTap extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container( margin: EdgeInsets.only(left: 10,right: 5,top: 100),
-                  child: Image(image: AssetImage('assets/images/radio_image.png'),width: 370,height:200 ,))
+              Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.1),
+                  child: Image(
+                    image: AssetImage('assets/images/radio_image.png'),
+                    width: 370,
+                    height: 200,
+                  ))
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container( margin: EdgeInsets.only(left: 110,top: 60),
-                  child: Text('إذاعة القرآن الكريم',style: Theme.of(context).textTheme.titleMedium,))
+              Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.08),
+                  child: Text(
+                    AppLocalizations.of(context)!.radio_name,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ))
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container( margin: EdgeInsets.only(left: 85,top: 55),
-                  child: Image(image: AssetImage('assets/images/radio_play.png'),width: 218.5,height:36 ,))
+              Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.08),
+                  child: Image(
+                    image: AssetImage('assets/images/radio_play.png'),
+                    width: 218.5,
+                    height: 36,
+                  ))
             ],
           ),
         ],

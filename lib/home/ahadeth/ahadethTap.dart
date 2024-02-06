@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_new/my_theme.dart';
+
 import 'item_hadeth_name.dart';
 
 class AhadethTap extends StatefulWidget {
@@ -9,7 +11,8 @@ class AhadethTap extends StatefulWidget {
 }
 
 class _AhadethTapState extends State<AhadethTap> {
- List<Hadeth> hadethList =[];
+  List<Hadeth> hadethList = [];
+
   @override
   Widget build(BuildContext context) {
     if(hadethList.isEmpty){
@@ -22,8 +25,8 @@ class _AhadethTapState extends State<AhadethTap> {
     color: MyTheme.primaryLightColor,
     thickness: 3,
     ),
-        Text('الأحاديث',style: Theme.of(context).textTheme.titleMedium
-        ),
+        Text(AppLocalizations.of(context)!.hadeth_name,
+            style: Theme.of(context).textTheme.titleMedium),
         Divider(
           color: MyTheme.primaryLightColor,
           thickness: 3,
