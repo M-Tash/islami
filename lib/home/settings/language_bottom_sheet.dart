@@ -59,6 +59,10 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   }
 
   Widget getUnSelectedItemWidget(String text) {
-    return Text(text, style: Theme.of(context).textTheme.titleSmall);
+    return Text(text,
+        style: Theme.of(context)
+            .textTheme
+            .titleMedium!
+            .copyWith(color: MyTheme.blackColor));
   }
 }

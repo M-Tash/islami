@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_new/home/settings/language_bottom_sheet.dart';
+import 'package:islami_new/home/settings/theme_bottom_sheet.dart';
 import 'package:islami_new/my_theme.dart';
 import 'package:islami_new/providers/app_config_provider.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +41,12 @@ class _SettingsTapState extends State<SettingsTap> {
                         provider.appLanguage == 'en'
                             ? AppLocalizations.of(context)!.english
                             : AppLocalizations.of(context)!.arabic,
-                        style: Theme.of(context).textTheme.titleSmall),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                fontWeight: FontWeight.w400,
+                                color: MyTheme.blackColor)),
                     Icon(
                       Icons.arrow_drop_down,
                       size: 30,
@@ -51,7 +57,47 @@ class _SettingsTapState extends State<SettingsTap> {
               onTap: () {
                 showLanguageBottemSheet();
               },
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              AppLocalizations.of(context)!.theme,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InkWell(
+              child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: MyTheme.primaryLightColor),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        provider.isDarkMode()
+                            ? AppLocalizations.of(context)!.dark
+                            : AppLocalizations.of(context)!.light,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                fontWeight: FontWeight.w400,
+                                color: MyTheme.blackColor)),
+                    Icon(
+                      Icons.arrow_drop_down,
+                      size: 30,
+                    )
+                  ],
+                ),
+              ),
+              onTap: () {
+                showThemeBottemSheet();
+              },
+            ),
           ],
         ));
   }
@@ -60,6 +106,13 @@ class _SettingsTapState extends State<SettingsTap> {
     showModalBottomSheet(
       context: context,
       builder: (context) => LanguageBottomSheet(),
+    );
+  }
+
+  void showThemeBottemSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => ThemeBottomSheet(),
     );
   }
 }

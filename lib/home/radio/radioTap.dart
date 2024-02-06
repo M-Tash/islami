@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_new/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class RadioTap extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Container(
       color: Colors.transparent,
       child: Column(
@@ -40,11 +42,18 @@ class RadioTap extends StatelessWidget {
               Container(
                   margin: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height * 0.08),
-                  child: Image(
-                    image: AssetImage('assets/images/radio_play.png'),
-                    width: 218.5,
-                    height: 36,
-                  ))
+                  child: provider.isDarkMode()
+                      ? Image(
+                          image:
+                              AssetImage('assets/images/radio_play_dark.png'),
+                          width: 218.5,
+                          height: 36,
+                        )
+                      : Image(
+                          image: AssetImage('assets/images/radio_play.png'),
+                          width: 218.5,
+                          height: 36,
+                        ))
             ],
           ),
         ],
