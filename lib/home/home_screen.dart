@@ -82,27 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     label: AppLocalizations.of(context)!.settings),
               ],
             ),
-            /*CurvedNavigationBar(
-            index: 0,
-            height: 60.0,
-            items: <Widget>[
-              ImageIcon(AssetImage('asse ts/images/radio_icon.png'),size:40 ),
-              ImageIcon(AssetImage('assets/images/sebha_icon.png'),size:40),
-              ImageIcon(AssetImage('assets/images/ahadeth_icon.png'),size:40),
-              ImageIcon(AssetImage('assets/images/moshaf_blue.png'),size:40),
-            ],
-            color: Color.fromARGB(255, 164, 118, 53),
-            buttonBackgroundColor: Color.fromARGB(255, 164, 118, 53),
-            backgroundColor: MyTheme.primaryLightColor,
-            animationCurve: Curves.easeInOut,
-            animationDuration: Duration(milliseconds: 300),
-            onTap: (index) {
-              setState(() {
-                selectedIndex =index;
-              });
-            },
-            letIndexChange: (index) => true,
-          ),*/
           ),
           body: tabs[selectedIndex],
 
