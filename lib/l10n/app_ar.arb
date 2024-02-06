@@ -1,0 +1,15 @@
+{
+  "app_title": "إسلامي",
+  "quran": "القراّن",
+  "hadeth": "الحديث",
+  "sebha": "السبحة",
+  "radio": "راديو",
+  "sura_name": "إسم السورة",
+  "hadeth_name": "رقم الحديث",
+  "sebha_counter": "عدد التسبيحات",
+  "radio_name": "إذاعة القراّن الكريم",
+  "settings": "الإعدادات",
+  "language": "اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية"
+}
